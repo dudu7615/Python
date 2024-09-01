@@ -1,0 +1,10 @@
+**/__pycache__
+**/__
+**/log
+
+# 打包输出
+**/output 
+**/*.build
+**/*.dist
+**/*.onefile-build
+**/build
