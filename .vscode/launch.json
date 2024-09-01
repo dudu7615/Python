@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "console": "internalConsole",
+            "justMyCode": true,
+            "redirectOutput": true
+        },
+        {
+            "name": "Python: CMD",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>356</width>
+    <height>133</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="start">
+      <property name="text">
+       <string>开始</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="show" native="true"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="off">
+      <property name="text">
+       <string>关闭</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="3">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>设置</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="white">
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 0255, 255)</string>
+         </property>
+         <property name="text">
+          <string>白</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="green">
+         <property name="styleSheet">
+          <string notr="true">background: rgb(0, 255, 0)</string>
+         </property>
+         <property name="text">
+          <string>绿</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="black">
+         <property name="styleSheet">
+          <string notr="true">background: rgb(0, 0, 0)</string>
+         </property>
+         <property name="text">
+          <string>黑</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QPushButton" name="choose">
+         <property name="text">
+          <string>自定义</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="red">
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 0, 0)</string>
+         </property>
+         <property name="text">
+          <string>红</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QSlider" name="wight">
+         <property name="maximum">
+          <number>35</number>
+         </property>
+         <property name="value">
+          <number>10</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

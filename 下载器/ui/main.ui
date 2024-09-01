@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>407</width>
+    <height>304</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QSpinBox" name="bitSize">
+      <property name="suffix">
+       <string>M</string>
+      </property>
+      <property name="prefix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>10240</number>
+      </property>
+      <property name="singleStep">
+       <number>1</number>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::DefaultStepType</enum>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+      <property name="displayIntegerBase">
+       <number>10</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QLineEdit" name="url">
+      <property name="placeholderText">
+       <string>输入下载链接</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="4">
+     <widget class="QTextBrowser" name="info"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="savePath">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string>保存路径(开始下载后自动生成)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="start">
+      <property name="text">
+       <string>开始下载</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>块大小</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

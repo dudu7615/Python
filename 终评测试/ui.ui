@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>339</width>
+    <height>152</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>开始日期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDateEdit" name="start">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>结束日期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDateEdit" name="end">
+        <property name="dateTime">
+         <datetime>
+          <hour>15</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2020</year>
+          <month>10</month>
+          <day>1</day>
+         </datetime>
+        </property>
+        <property name="currentSection">
+         <enum>QDateTimeEdit::YearSection</enum>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="result">
+      <property name="text">
+       <string>请先计算</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="run">
+      <property name="text">
+       <string>开始计算</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

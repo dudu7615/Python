@@ -1,0 +1,21 @@
+- img:
+  - bullet:
+    - enemy.png
+    - my.png
+  - explode:
+    - 1.png
+    - 2.png
+    - 3.png
+    - 4.png
+  - tank:
+    - enemy:
+      - D.png
+      - L.png
+      - R.png
+      - U.png
+    - my:
+      - D.png
+      - L.png
+      - R.png
+      - U.png
+  - wall.png

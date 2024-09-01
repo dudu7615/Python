@@ -1,0 +1,22 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+<file>./__init__.py</file>
+<file>./icon.ico</file>
+<file>./asset_imports/asset_imports.txt</file>
+<file>./content/App.qml</file>
+<file>./content/fonts/fonts.txt</file>
+<file>./content/Screen01.ui.qml</file>
+<file>./imports/Ui/Constants.qml</file>
+<file>./imports/Ui/DirectoryFontLoader.qml</file>
+<file>./imports/Ui/EventListModel.qml</file>
+<file>./imports/Ui/EventListSimulator.qml</file>
+<file>./imports/Ui/qmldir</file>
+<file>./insight</file>
+<file>./main.qml</file>
+<file>./qmlcomponents</file>
+<file>./qmlmodules</file>
+<file>./qtquickcontrols2.conf</file>
+<file>./Ui.qmlproject</file>
+<file>./content/qmldir</file>
+</qresource>
+</RCC>

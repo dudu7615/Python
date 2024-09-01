@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>436</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="text">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>436</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="open"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>目录</string>
+    </property>
+    <addaction name="enterRe"/>
+    <addaction name="openList"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <addaction name="setFont"/>
+    <addaction name="startDownload"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="massager"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QTreeWidget" name="showNovelList">
+       <column>
+        <property name="text">
+         <string>目录</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="enterRe">
+   <property name="text">
+    <string>输入正则表达式</string>
+   </property>
+  </action>
+  <action name="openList">
+   <property name="text">
+    <string>打开目录</string>
+   </property>
+  </action>
+  <action name="setFont">
+   <property name="text">
+    <string>设置字体</string>
+   </property>
+  </action>
+  <action name="startDownload">
+   <property name="text">
+    <string>启动电子书下载器</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
