@@ -1,9 +1,11 @@
 **/__pycache__
 **/__
 **/log
+**/.env
 
 # 打包输出
 **/output 
+**/Release
 **/*.build
 **/*.dist
 **/*.onefile-build
