@@ -1,9 +1,8 @@
 import sys
 import yaml
-import time
+import asyncio
 from datetime import datetime
 from pathlib import Path
-from threading import Thread
 from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PySide6.QtGui import QIcon, QAction
 from models import *
@@ -24,67 +23,54 @@ config = Config(
 )
 
 
-class ImgThread(Thread):
-    def __init__(self, path: Path):
-        super().__init__()
-        self.path = path
-        self.daemon = True
+@logger.catch
+async def img():
+    logger.info("开始运行图片模块运行")
+    i = True  # 是否是第一次
+    nowTime = datetime.now()
+    # logger.debug(f"{self.config}")
+    while True:
+        logger.debug(f"{datetime.now().minute} {nowTime.minute}")
+        if datetime.now().minute != nowTime.minute or i:
+            nowTime = datetime.now()
+            makeImg.BgImg(
+                IMGS_PATH,
+                config.size,
+                "bg.jpg",
+                "weather.png",
+                # "exam.png",
+                f"month{nowTime.month}.png",
+                f"day{nowTime.day}.png",
+                f"hour{nowTime.hour}.png",
+                f"minute{nowTime.minute}.png",
+                f"weekday{nowTime.weekday()+1}.png",
+            )
+            setBg.setBackGroundImg(IMGS_PATH / "result.png")
 
-        self.start()
-
-    @logger.catch
-    def run(self):
-        logger.info("开始运行图片模块运行")
-        i = True  # 是否是第一次
-        nowTime = datetime.now()
-        # logger.debug(f"{self.config}")
-        while True:
-            if datetime.now().minute != nowTime.minute or i:
-                nowTime = datetime.now()
-                makeImg.BgImg(
-                    self.path,
-                    config.size,
-                    "bg.jpg",
-                    "weather.png",
-                    # "exam.png",
-                    f"month{nowTime.month}.png",
-                    f"day{nowTime.day}.png",
-                    f"hour{nowTime.hour}.png",
-                    f"minute{nowTime.minute}.png",
-                    f"weekday{nowTime.weekday()+1}.png",
-                )
-                setBg.setBackGroundImg(self.path / "result.png")
-
-                if i:
-                    i = False
-            time.sleep(10)
+            if i:
+                i = False
+        await asyncio.sleep(10)
 
 
-class WeatherThread(Thread):
-    def __init__(self, path: Path):
-        super().__init__()
-        self.path = path
-        self.daemon = True
 
-        self.start()
-
-    @logger.catch
-    def run(self):
-        logger.info("开始运行天气模块")
-        i = True  # 是否是第一次
-        while True:
-            if datetime.now().minute == 0 or i:
-                makeImg.weatherImg(
-                    self.path,
-                    config.size,
-                    config.place["weather"],
-                    weather.getweather(),
-                    config.font,
-                    config.color,
-                )
-                if i:
-                    i = False
-            time.sleep(50)
+@logger.catch
+async def weater():
+    logger.info("开始运行天气模块")
+    i = True  # 是否是第一次
+    while True:
+        logger.debug(f"{datetime.now().minute}")
+        if datetime.now().minute == 0 or i:
+            makeImg.weatherImg(
+                IMGS_PATH,
+                config.size,
+                config.place["weather"],
+                weather.getweather(),
+                config.font,
+                config.color,
+            )
+            if i:
+                i = False
+        await asyncio.sleep(50)
 
 
 class TrayIcon(QSystemTrayIcon):
@@ -106,12 +92,13 @@ class TrayIcon(QSystemTrayIcon):
 
         sys.exit()
 
+async def run():
+    await asyncio.gather(weater(), img())
 
 @logger.catch
 def main():
     logger.info("程序启动")
-    ImgThread(IMGS_PATH)
-    WeatherThread(IMGS_PATH)
+    asyncio.run(run())
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)
     tray = TrayIcon()

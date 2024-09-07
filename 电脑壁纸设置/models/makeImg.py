@@ -46,7 +46,7 @@ def BgImg(path: Path, size: tuple[int, int], *imgs: str):
     logger.debug("开始合成背景图片")
     img = Image.new("RGBA", size, (0, 0, 0, 0))
     for imgPath in imgs:
-        logger.debug(f"正在合成背景图片{imgPath}")
+        # logger.debug(f"正在合成背景图片{imgPath}")
         new = Image.open(path / imgPath).convert("RGBA")
         img.alpha_composite(new)
     img.save(path / "result.png")
