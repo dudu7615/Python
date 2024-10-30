@@ -33,6 +33,15 @@
                 "${file}"
             ],
             "problemMatcher": []
+        },
+        {
+            "label": "git tags",
+            "type": "shell",
+            "command": "git.exe",
+            "args": [
+                "push", "origin", "--tags"
+            ],
+            "problemMatcher": []
         }
     ]
 }
